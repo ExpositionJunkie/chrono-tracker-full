@@ -1,5 +1,5 @@
-import User from "../models/userModel.js";
 import asyncHandler from "express-async-handler";
+import User from '../models/userModel.js';
 
 //getUsers function to get all users
 export const getUsers = asyncHandler(async (req, res) => {
