@@ -16,7 +16,7 @@ const connectDB = async () => {
     
     // ****** IMPORTANT ********
     //If you are having trouble during testing with "cannot overwrite "modelname" once...", uncomment the code below: 
-    //mongoose.set("overwriteModels", true);
+    mongoose.set("overwriteModels", true);
 
     console.log(`Databse connected : ${con.connection.host}`);
   } catch (error) {

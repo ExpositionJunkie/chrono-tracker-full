@@ -35,6 +35,12 @@ const trackerSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    dontCare: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+    data: []
   },
   {
     trimestamps: true,

@@ -1,29 +1,36 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const ratingSchema = mongoose.Schema({
+const ratingSchema = mongoose.Schema(
+  {
+    trackerID: {
+      type: String,
+      required: true,
+    },
     dateTime: {
-        type: Date,
-        required: true,
+      type: Date,
+      required: true,
     },
     rating: {
-        type: Number,
-        min: 0,
-        max: 10,
-        get: v => Math.round(v),
-        set: v => Math.round(v),
+      type: Number,
+      min: 0,
+      max: 10,
+      get: (v) => Math.round(v),
+      set: (v) => Math.round(v),
     },
     notes: {
-        type: String,
+      type: String,
     },
     ignorePressed: {
-        type: Boolean,
-        required: true,
-        default: true,
-    }
-}, {
-    timestamps: true
-})
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Rating = mongoose.model('User', ratingSchema)
+const Rating = mongoose.model("User", ratingSchema);
 
-export default Rating
+export default Rating;
